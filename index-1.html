@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111d27">
+<meta name="description" content="Daniel Mellanby — Rolls-Royce trained automotive wood veneer and lacquer specialist in York. Over 15 years' experience in restoration, refinishing and repair.">
+<title>Daniel Mellanby — Automotive Wood Veneer &amp; Lacquer Specialist</title>
+<style>
+/*
+  DANIEL MELLANBY — HOLDING WEBSITE
+  ----------------------------------
+  Everything is contained in this one index.html file.
+  To change a colour, edit the variables in :root below.
+  To change the text, find the heading or paragraph directly in the HTML.
+  To change the email, change BOTH the visible address and mailto: links.
+  To add/remove a service, copy/delete a full <article class="service"> block.
+  The hero artwork is an embedded SVG and needs no image files.
+  To change or remove the artwork, edit/delete <div class="art-panel"> ... </div>.
+  For a future photo instead, replace the art-panel div with:
+  <div class="art-panel"><img src="images/my-photo.jpg" alt="Restored automotive wood interior"></div>
+  Then create an images folder next to this HTML file, and add the image.
+  No external fonts, JavaScript, frameworks, or tracking required.
+*/
+:root {
+  --navy: #101d29;
+  --navy-deep: #0b151f;
+  --navy-soft: #192a36;
+  --ivory: #f4f0e8;
+  --ivory-soft: #fbf8f2;
+  --ink: #1b272f;
+  --muted: #52616b;
+  --copper: #bb926b;
+  --copper-light: #d3ae87;
+  --border: #d7d0c6;
+  --white: #fff;
+  --width: 1160px;
+}
+*,*::before,*::after {box-sizing:border-box}
+html {scroll-behavior:smooth}
+body {margin:0; min-width:0; background:var(--ivory); color:var(--ink); font:400 16px/1.6 Arial,Helvetica,sans-serif}
+a {color:inherit}
+a:focus-visible {outline:2px solid var(--copper); outline-offset:5px}
+img,svg {max-width:100%}
+.wrap {width:min(var(--width),calc(100% - 48px)); margin-inline:auto}
+.site-header {background:var(--navy-deep); color:var(--ivory); border-bottom:1px solid rgba(211,174,135,.35)}
+.header-inner {display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:87px}
+.identity {display:grid; gap:2px; text-decoration:none}
+.identity strong {font:400 clamp(1.45rem,2.2vw,1.9rem)/1.12 Georgia,'Times New Roman',serif; letter-spacing:.025em}
+.identity small {font-size:.60rem; letter-spacing:.16em; text-transform:uppercase; color:#c1b7ab}
+nav {display:flex; gap:clamp(18px,3.4vw,42px)}
+nav a {font-size:.72rem; letter-spacing:.16em; text-decoration:none; text-transform:uppercase}
+nav a:hover {color:var(--copper-light)}
+.hero {position:relative; background:var(--navy); color:var(--ivory); overflow:hidden}
+.hero::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 85% at 90% 40%,#263b45 0%,transparent 85%);pointer-events:none}
+.hero-inner {display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); align-items:stretch; min-height:570px; position:relative}
+.hero-copy {position:relative;z-index:2;padding:clamp(64px,8vw,110px) clamp(16px,3.8vw,50px) clamp(64px,8vw,106px) 0;align-self:center}
+.eyebrow {display:flex;align-items:center;gap:14px; margin:0 0 28px;color:var(--copper-light);font-size:.72rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
+.eyebrow::before {content:"";width:33px;height:1px;background:currentColor;flex:none}
+h1,h2,h3,p {margin-top:0}
+h1,h2,h3 {font-family:Georgia,'Times New Roman',serif;font-weight:400}
+h1 {margin-bottom:25px;max-width:720px;font-size:clamp(2.8rem,5.1vw,5.2rem);line-height:1.07;letter-spacing:-.045em;text-wrap:balance}
+h1 em {font-style:normal;color:var(--copper-light)}
+.hero-description {font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.75;max-width:555px;color:#d4d7d5;margin-bottom:26px}
+.specification {font-family:Georgia,'Times New Roman',serif;font-size:1.16rem;color:var(--copper-light);margin-bottom:34px}
+.primary-link {display:inline-flex;align-items:center;gap:22px;padding:15px 22px;border:1px solid var(--copper);background:var(--copper);font-weight:700;color:var(--navy-deep);font-size:.75rem;letter-spacing:.13em;text-decoration:none;text-transform:uppercase;transition:background .2s,color .2s}
+.primary-link:hover {background:transparent;color:var(--copper-light)}
+.arrow {font-size:1.25rem;font-weight:400;line-height:1}
+.art-panel {position:relative;display:grid;place-items:center;min-width:0;overflow:hidden;isolation:isolate}
+.art-panel::before {content:"";position:absolute;inset:7% 0 7% 0;background:linear-gradient(115deg,transparent 1%,#1e323b 58%,#4d382d 100%);border-left:1px solid rgba(211,174,135,.20);transform:skewX(-8deg) scale(1.12);z-index:-1}
+.art-panel svg {width:min(100%,575px);height:auto;display:block;filter:drop-shadow(12px 20px 22px rgba(0,0,0,.27))}
+.art-panel .art-caption {position:absolute;bottom:35px;right:10px;display:flex;align-items:center;gap:12px;color:#c9c3b9;letter-spacing:.18em;font-size:.60rem;text-transform:uppercase}
+.art-caption::before {content:"";width:27px;height:1px;background:var(--copper)}
+.stat-band {background:#1a2933;color:var(--ivory);border-top:1px solid rgba(211,174,135,.22)}
+.stat-inner {display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
+.stat {padding:24px 26px;border-right:1px solid rgba(211,174,135,.2);display:flex;gap:15px;align-items:center}
+.stat:first-child {padding-left:0}.stat:last-child {border-right:0}
+.stat strong {font:400 clamp(2rem,3vw,2.8rem)/1 Georgia,serif;color:var(--copper-light);white-space:nowrap}
+.stat span {font-size:.77rem;line-height:1.4;color:#d8d5cf}
+.section {padding:clamp(74px,9vw,112px) 0}
+.section-head {display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1fr);gap:32px;align-items:end;margin-bottom:44px}
+.section-head .eyebrow {color:#966744;margin-bottom:18px}
+h2 {font-size:clamp(2.4rem,4.1vw,4.1rem);letter-spacing:-.04em;line-height:1.12;margin-bottom:0}
+.section-head p:not(.eyebrow) {max-width:485px;margin:0 0 4px auto;color:var(--muted)}
+.service-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.service {padding:36px clamp(22px,3vw,38px) 35px 0}
+.service + .service {padding-left:clamp(22px,3vw,38px);border-left:1px solid var(--border)}
+.service-num {display:block;color:#a4744e;font-size:.72rem;letter-spacing:.15em;margin-bottom:32px}
+.service h3 {font-size:clamp(1.45rem,2vw,1.9rem);line-height:1.2;letter-spacing:-.02em;margin-bottom:16px}
+.service p {color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:0}
+.note {display:flex;justify-content:space-between;gap:25px;align-items:center;margin-top:30px;color:var(--muted);font-size:.86rem}
+.note strong {font-weight:400;font-family:Georgia,serif;color:#936c4c;font-size:1.12rem}
+.contact {background:var(--navy-deep);color:var(--ivory);border-top:3px solid var(--copper)}
+.contact-inner {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.82fr);gap:clamp(35px,6vw,90px);padding:clamp(75px,8vw,102px) 0}
+.contact h2 {margin-bottom:26px;max-width:650px}
+.contact .eyebrow {margin-bottom:22px}
+.contact p {color:#c8cecf;max-width:570px}
+.contact-card {border-left:1px solid rgba(211,174,135,.35);padding-left:clamp(25px,4vw,65px);display:flex;flex-direction:column;justify-content:center;gap:12px}
+.contact-label {font-size:.7rem;letter-spacing:.17em;text-transform:uppercase;color:var(--copper-light)}
+.email {font:400 clamp(1.3rem,2.1vw,2rem)/1.4 Georgia,serif;text-decoration:none;overflow-wrap:anywhere}
+.email:hover {color:var(--copper-light)}
+.contact-location {font-size:.88rem;color:#c8cecf;margin-top:18px}
+.footer {background:var(--navy-deep);color:#adb5b9;border-top:1px solid rgba(211,174,135,.2)}
+.footer-inner {padding:22px 0 28px;display:flex;justify-content:space-between;gap:24px;align-items:center;font-size:.74rem}
+.footer-inner p {margin:0}
+.footer-inner span {color:var(--copper-light);letter-spacing:.12em;text-transform:uppercase;font-size:.68rem}
+@media(max-width:900px) {
+ .hero-inner {grid-template-columns:minmax(0,1fr) minmax(0,.75fr);min-height:0}
+ .hero-copy {padding-block:70px}
+ .art-panel .art-caption {right:0}
+ .section-head {grid-template-columns:1fr;gap:20px}.section-head p:not(.eyebrow){margin:0}
+}
+@media(max-width:700px) {
+ .wrap {width:calc(100% - 36px)}
+ .header-inner {min-height:79px;gap:16px}
+ .identity small {font-size:.52rem;letter-spacing:.1em}
+ nav {gap:14px} nav a {font-size:.65rem}
+ .hero-inner {grid-template-columns:1fr}
+ .hero-copy {padding:69px 0 20px}
+ h1 {font-size:clamp(2.7rem,9vw,4rem)}
+ .art-panel {height:230px;overflow:hidden}
+ .art-panel svg {width:350px;transform:translateY(-16px)}
+ .art-panel::before {inset:0 0 0 5%;transform:skewX(-10deg) scale(1.12)}
+ .art-panel .art-caption {bottom:15px;right:5px}
+ .stat-inner {grid-template-columns:1fr 1fr}.stat {padding:20px 14px}.stat:first-child {padding-left:0}.stat:nth-child(2){border-right:0}.stat:nth-child(3){grid-column:1/-1;border-top:1px solid rgba(211,174,135,.2);padding-left:0}
+ .service-grid {grid-template-columns:1fr}.service,.service+.service {padding:28px 0;border-left:0}.service+.service {border-top:1px solid var(--border)}.service-num {margin-bottom:12px}
+ .note {align-items:flex-start;flex-direction:column}
+ .contact-inner {grid-template-columns:1fr;gap:38px}.contact-card {padding-left:24px}
+ .footer-inner {flex-direction:column;align-items:flex-start;gap:6px}
+}
+@media(max-width:370px) {.header-inner {flex-wrap:wrap;padding-block:17px}.hero-copy {padding-top:55px} .stat strong {font-size:1.8rem}}
+@media(prefers-reduced-motion:reduce) {html {scroll-behavior:auto}.primary-link {transition:none}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="identity" href="#top" aria-label="Daniel Mellanby, back to top">
+      <strong>Daniel Mellanby</strong>
+      <small>Automotive Wood Veneer &amp; Lacquer Specialist</small>
+    </a>
+    <nav aria-label="Main navigation"><a href="#services">Services</a><a href="#contact">Contact</a></nav>
+  </div>
+</header>
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Independent specialist · York, England</p>
+        <h1 id="hero-title">Automotive wood.<br><em>Restored properly.</em></h1>
+        <p class="hero-description">I'm Daniel Mellanby, a Rolls-Royce trained apprentice and time-served specialist with over 15 years' experience in automotive wood veneer and lacquer finishing.</p>
+        <p class="hero-description">Restoration, refinishing and repair for classic, prestige and luxury vehicle interiors.</p>
+        <p class="specification">Original specification, or customer specification.</p>
+        <a class="primary-link" href="mailto:info@danielmellanby.co.uk?subject=Automotive%20wood%20restoration%20enquiry">Discuss your project <span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <!-- Decorative SVG: original abstract veneer contours / car trim inspired geometry, no image assets or downloads. -->
+      <div class="art-panel" aria-hidden="true">
+        <svg viewBox="0 0 550 640" xmlns="http://www.w3.org/2000/svg" focusable="false">
+          <defs>
+            <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c2976d"/><stop offset=".48" stop-color="#6d4632"/><stop offset="1" stop-color="#2b2627"/></linearGradient>
+            <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f0c89a" stop-opacity=".8"/><stop offset=".5" stop-color="#daa776" stop-opacity=".05"/><stop offset="1" stop-color="#e1ad78" stop-opacity=".7"/></linearGradient>
+            <clipPath id="panelclip"><path d="M173 44 C275 38 427 87 451 196 C479 320 378 544 266 596 C138 656 48 508 69 359 C87 231 72 62 173 44Z"/></clipPath>
+          </defs>
+          <path d="M173 44 C275 38 427 87 451 196 C479 320 378 544 266 596 C138 656 48 508 69 359 C87 231 72 62 173 44Z" fill="url(#wood)" stroke="#c79e77" stroke-width="2"/>
+          <g clip-path="url(#panelclip)" fill="none" stroke="#271e1d" stroke-width="4" opacity=".55">
+            <path d="M-10 39 C233 -14 354 138 300 299 S159 554 315 680"/>
+            <path d="M9 32 C252 -5 375 125 321 294 S182 551 337 676"/>
+            <path d="M32 27 C275 6 396 120 346 295 S210 558 357 674"/>
+            <path d="M50 27 C298 12 410 133 363 307 S236 563 379 679"/>
+            <path d="M74 32 C320 24 429 148 387 327 S268 569 400 677"/>
+            <path d="M93 39 C334 37 449 168 408 350 S298 571 418 683"/>
+            <path d="M116 45 C358 49 470 195 428 369 S316 568 441 680"/>
+            <path d="M138 51 C376 64 487 214 449 396 S352 579 465 677"/>
+            <path d="M-46 78 C163 -13 257 80 217 245 S56 494 229 668"/>
+            <path d="M-28 83 C185 3 286 89 246 254 S89 508 249 670"/>
+            <path d="M-5 86 C205 21 312 101 273 266 S110 527 271 672"/>
+          </g>
+          <g clip-path="url(#panelclip)" fill="none" stroke="url(#shine)" stroke-width="2" opacity=".82">
+            <path d="M-10 28 C230 -19 350 129 296 292 S150 554 310 680"/>
+            <path d="M49 16 C297 10 418 127 370 304 S230 558 387 677"/>
+            <path d="M112 33 C350 40 470 200 430 375 S315 565 444 684"/>
+            <path d="M-39 63 C160 -5 281 76 222 244 S60 493 235 677"/>
+          </g>
+          <path d="M173 44 C275 38 427 87 451 196 C479 320 378 544 266 596 C138 656 48 508 69 359 C87 231 72 62 173 44Z" fill="none" stroke="#e1b184" stroke-opacity=".64" stroke-width="1.6"/>
+          <path d="M474 79 V568 M491 112 V535" stroke="#c59d76" stroke-opacity=".45" stroke-width="1"/>
+          <circle cx="483" cy="603" r="4" fill="#c59d76"/>
+          <path d="M56 605 H180" stroke="#c59d76" stroke-opacity=".65"/>
+        </svg>
+        <span class="art-caption">Veneer · Finish · Detail</span>
+      </div>
+    </div>
+  </section>
+  <div class="stat-band">
+    <div class="wrap stat-inner">
+      <div class="stat"><strong>15+</strong><span>Years of specialist<br>experience</span></div>
+      <div class="stat"><strong>Spec.</strong><span>Original or customer<br>specification</span></div>
+      <div class="stat"><strong>York</strong><span>Based in England<br>UK enquiries welcome</span></div>
+    </div>
+  </div>
+  <section class="section" id="services" aria-labelledby="services-title">
+    <div class="wrap">
+      <div class="section-head">
+        <div><p class="eyebrow">The work</p><h2 id="services-title">What I offer.</h2></div>
+        <p>Careful, practical work on original wood trim — from renewing an existing finish to making a matching replacement part.</p>
+      </div>
+      <div class="service-grid">
+        <article class="service"><span class="service-num">01 / REFINE</span><h3>Refinishing</h3><p>Tired, faded and deteriorated wood trim stripped, refinished and polished. High-gloss lacquer finishing and colour correction where appropriate.</p></article>
+        <article class="service"><span class="service-num">02 / REPAIR</span><h3>Restoration &amp; repair</h3><p>Repairing damaged original woodwork, from cracks and chips to failing finishes and damaged veneer, with attention to the original detail.</p></article>
+        <article class="service"><span class="service-num">03 / RECREATE</span><h3>Veneer &amp; part making</h3><p>Matching veneer grain and colour, producing replacement components and reconstructing missing or beyond-repair parts.</p></article>
+      </div>
+      <div class="note"><strong>Original specification, or customer specification.</strong><span>Private owners · Classic car specialists · Restoration workshops</span></div>
+    </div>
+  </section>
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap contact-inner">
+      <div><p class="eyebrow">Start a conversation</p><h2 id="contact-title">Have a piece that needs attention?</h2><p>Send me an email with the vehicle, the parts involved and a few details of the work required. I welcome enquiries from private owners and restoration businesses.</p></div>
+      <div class="contact-card"><span class="contact-label">Email enquiries</span><a class="email" href="mailto:info@danielmellanby.co.uk?subject=Automotive%20wood%20restoration%20enquiry">info@danielmellanby.co.uk</a><span class="contact-location">York, England</span><span class="contact-label" style="margin-top:20px">Full project portfolio coming soon</span></div>
+    </div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><p>© 2026 Daniel Mellanby. Independent automotive wood veneer &amp; lacquer specialist.</p><span>Made with care, in York.</span></div></footer>
+</body>
+</html>
