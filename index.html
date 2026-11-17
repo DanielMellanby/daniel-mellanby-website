@@ -15,11 +15,7 @@
   To change the text, find the heading or paragraph directly in the HTML.
   To change the email, change BOTH the visible address and mailto: links.
   To add/remove a service, copy/delete a full <article class="service"> block.
-  The hero artwork is an embedded SVG and needs no image files.
-  To change or remove the artwork, edit/delete <div class="art-panel"> ... </div>.
-  For a future photo instead, replace the art-panel div with:
-  <div class="art-panel"><img src="images/my-photo.jpg" alt="Restored automotive wood interior"></div>
-  Then create an images folder next to this HTML file, and add the image.
+  This version has no artwork or photographs; it is a single HTML file.
   No external fonts, JavaScript, frameworks, or tracking required.
 */
 :root {
@@ -52,25 +48,20 @@ nav {display:flex; gap:clamp(18px,3.4vw,42px)}
 nav a {font-size:.72rem; letter-spacing:.16em; text-decoration:none; text-transform:uppercase}
 nav a:hover {color:var(--copper-light)}
 .hero {position:relative; background:var(--navy); color:var(--ivory); overflow:hidden}
-.hero::before {content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 85% at 90% 40%,#263b45 0%,transparent 85%);pointer-events:none}
-.hero-inner {display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); align-items:stretch; min-height:570px; position:relative}
-.hero-copy {position:relative;z-index:2;padding:clamp(64px,8vw,110px) clamp(16px,3.8vw,50px) clamp(64px,8vw,106px) 0;align-self:center}
+.hero::before {content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.025));pointer-events:none}
+.hero-inner {display:block;position:relative;min-height:0}
+.hero-copy {position:relative;z-index:2;max-width:790px;padding:clamp(70px,8vw,112px) 0 clamp(75px,9vw,122px)}
 .eyebrow {display:flex;align-items:center;gap:14px; margin:0 0 28px;color:var(--copper-light);font-size:.72rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
 .eyebrow::before {content:"";width:33px;height:1px;background:currentColor;flex:none}
 h1,h2,h3,p {margin-top:0}
 h1,h2,h3 {font-family:Georgia,'Times New Roman',serif;font-weight:400}
-h1 {margin-bottom:25px;max-width:720px;font-size:clamp(2.8rem,5.1vw,5.2rem);line-height:1.07;letter-spacing:-.045em;text-wrap:balance}
+h1 {margin-bottom:25px;max-width:790px;font-size:clamp(2.8rem,5.1vw,5.2rem);line-height:1.07;letter-spacing:-.045em;text-wrap:balance}
 h1 em {font-style:normal;color:var(--copper-light)}
 .hero-description {font-size:clamp(1rem,1.3vw,1.14rem);line-height:1.75;max-width:555px;color:#d4d7d5;margin-bottom:26px}
 .specification {font-family:Georgia,'Times New Roman',serif;font-size:1.16rem;color:var(--copper-light);margin-bottom:34px}
 .primary-link {display:inline-flex;align-items:center;gap:22px;padding:15px 22px;border:1px solid var(--copper);background:var(--copper);font-weight:700;color:var(--navy-deep);font-size:.75rem;letter-spacing:.13em;text-decoration:none;text-transform:uppercase;transition:background .2s,color .2s}
 .primary-link:hover {background:transparent;color:var(--copper-light)}
 .arrow {font-size:1.25rem;font-weight:400;line-height:1}
-.art-panel {position:relative;display:grid;place-items:center;min-width:0;overflow:hidden;isolation:isolate}
-.art-panel::before {content:"";position:absolute;inset:7% 0 7% 0;background:linear-gradient(115deg,transparent 1%,#1e323b 58%,#4d382d 100%);border-left:1px solid rgba(211,174,135,.20);transform:skewX(-8deg) scale(1.12);z-index:-1}
-.art-panel svg {width:min(100%,575px);height:auto;display:block;filter:drop-shadow(12px 20px 22px rgba(0,0,0,.27))}
-.art-panel .art-caption {position:absolute;bottom:35px;right:10px;display:flex;align-items:center;gap:12px;color:#c9c3b9;letter-spacing:.18em;font-size:.60rem;text-transform:uppercase}
-.art-caption::before {content:"";width:27px;height:1px;background:var(--copper)}
 .stat-band {background:#1a2933;color:var(--ivory);border-top:1px solid rgba(211,174,135,.22)}
 .stat-inner {display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
 .stat {padding:24px 26px;border-right:1px solid rgba(211,174,135,.2);display:flex;gap:15px;align-items:center}
@@ -105,9 +96,7 @@ h2 {font-size:clamp(2.4rem,4.1vw,4.1rem);letter-spacing:-.04em;line-height:1.12;
 .footer-inner p {margin:0}
 .footer-inner span {color:var(--copper-light);letter-spacing:.12em;text-transform:uppercase;font-size:.68rem}
 @media(max-width:900px) {
- .hero-inner {grid-template-columns:minmax(0,1fr) minmax(0,.75fr);min-height:0}
  .hero-copy {padding-block:70px}
- .art-panel .art-caption {right:0}
  .section-head {grid-template-columns:1fr;gap:20px}.section-head p:not(.eyebrow){margin:0}
 }
 @media(max-width:700px) {
@@ -115,13 +104,8 @@ h2 {font-size:clamp(2.4rem,4.1vw,4.1rem);letter-spacing:-.04em;line-height:1.12;
  .header-inner {min-height:79px;gap:16px}
  .identity small {font-size:.52rem;letter-spacing:.1em}
  nav {gap:14px} nav a {font-size:.65rem}
- .hero-inner {grid-template-columns:1fr}
- .hero-copy {padding:69px 0 20px}
+ .hero-copy {padding:69px 0 80px}
  h1 {font-size:clamp(2.7rem,9vw,4rem)}
- .art-panel {height:230px;overflow:hidden}
- .art-panel svg {width:350px;transform:translateY(-16px)}
- .art-panel::before {inset:0 0 0 5%;transform:skewX(-10deg) scale(1.12)}
- .art-panel .art-caption {bottom:15px;right:5px}
  .stat-inner {grid-template-columns:1fr 1fr}.stat {padding:20px 14px}.stat:first-child {padding-left:0}.stat:nth-child(2){border-right:0}.stat:nth-child(3){grid-column:1/-1;border-top:1px solid rgba(211,174,135,.2);padding-left:0}
  .service-grid {grid-template-columns:1fr}.service,.service+.service {padding:28px 0;border-left:0}.service+.service {border-top:1px solid var(--border)}.service-num {margin-bottom:12px}
  .note {align-items:flex-start;flex-direction:column}
@@ -153,41 +137,7 @@ h2 {font-size:clamp(2.4rem,4.1vw,4.1rem);letter-spacing:-.04em;line-height:1.12;
         <p class="specification">Original specification, or customer specification.</p>
         <a class="primary-link" href="mailto:info@danielmellanby.co.uk?subject=Automotive%20wood%20restoration%20enquiry">Discuss your project <span class="arrow" aria-hidden="true">↗</span></a>
       </div>
-      <!-- Decorative SVG: original abstract veneer contours / car trim inspired geometry, no image assets or downloads. -->
-      <div class="art-panel" aria-hidden="true">
-        <svg viewBox="0 0 550 640" xmlns="http://www.w3.org/2000/svg" focusable="false">
-          <defs>
-            <linearGradient id="wood" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c2976d"/><stop offset=".48" stop-color="#6d4632"/><stop offset="1" stop-color="#2b2627"/></linearGradient>
-            <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f0c89a" stop-opacity=".8"/><stop offset=".5" stop-color="#daa776" stop-opacity=".05"/><stop offset="1" stop-color="#e1ad78" stop-opacity=".7"/></linearGradient>
-            <clipPath id="panelclip"><path d="M173 44 C275 38 427 87 451 196 C479 320 378 544 266 596 C138 656 48 508 69 359 C87 231 72 62 173 44Z"/></clipPath>
-          </defs>
-          <path d="M173 44 C275 38 427 87 451 196 C479 320 378 544 266 596 C138 656 48 508 69 359 C87 231 72 62 173 44Z" fill="url(#wood)" stroke="#c79e77" stroke-width="2"/>
-          <g clip-path="url(#panelclip)" fill="none" stroke="#271e1d" stroke-width="4" opacity=".55">
-            <path d="M-10 39 C233 -14 354 138 300 299 S159 554 315 680"/>
-            <path d="M9 32 C252 -5 375 125 321 294 S182 551 337 676"/>
-            <path d="M32 27 C275 6 396 120 346 295 S210 558 357 674"/>
-            <path d="M50 27 C298 12 410 133 363 307 S236 563 379 679"/>
-            <path d="M74 32 C320 24 429 148 387 327 S268 569 400 677"/>
-            <path d="M93 39 C334 37 449 168 408 350 S298 571 418 683"/>
-            <path d="M116 45 C358 49 470 195 428 369 S316 568 441 680"/>
-            <path d="M138 51 C376 64 487 214 449 396 S352 579 465 677"/>
-            <path d="M-46 78 C163 -13 257 80 217 245 S56 494 229 668"/>
-            <path d="M-28 83 C185 3 286 89 246 254 S89 508 249 670"/>
-            <path d="M-5 86 C205 21 312 101 273 266 S110 527 271 672"/>
-          </g>
-          <g clip-path="url(#panelclip)" fill="none" stroke="url(#shine)" stroke-width="2" opacity=".82">
-            <path d="M-10 28 C230 -19 350 129 296 292 S150 554 310 680"/>
-            <path d="M49 16 C297 10 418 127 370 304 S230 558 387 677"/>
-            <path d="M112 33 C350 40 470 200 430 375 S315 565 444 684"/>
-            <path d="M-39 63 C160 -5 281 76 222 244 S60 493 235 677"/>
-          </g>
-          <path d="M173 44 C275 38 427 87 451 196 C479 320 378 544 266 596 C138 656 48 508 69 359 C87 231 72 62 173 44Z" fill="none" stroke="#e1b184" stroke-opacity=".64" stroke-width="1.6"/>
-          <path d="M474 79 V568 M491 112 V535" stroke="#c59d76" stroke-opacity=".45" stroke-width="1"/>
-          <circle cx="483" cy="603" r="4" fill="#c59d76"/>
-          <path d="M56 605 H180" stroke="#c59d76" stroke-opacity=".65"/>
-        </svg>
-        <span class="art-caption">Veneer · Finish · Detail</span>
-      </div>
+
     </div>
   </section>
   <div class="stat-band">
